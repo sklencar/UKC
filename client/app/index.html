@@ -14,10 +14,11 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <![endif]-->
+
     <!-- endbuild -->
-
-
 
   </head>
   <body ng-app="clientApp">
@@ -47,8 +48,9 @@
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/contact">Contact</a></li>
-              <li><a ng-href="#/reservations">Reservations</a></li>
-              <li><a ng-href="#/reserve-room">Reserve room</a></li>
+              <li><a ng-href="#/book-search">Hľadaj knihu</a></li>
+              <li><a ng-href="#/reservations">Rezervácie</a></li>
+              <li><a ng-href="#/reserve-room">Rezervuj si</a></li>
               <li><a ng-href="#/signup">Signup</a></li>
             </ul>
           </div>
@@ -67,16 +69,6 @@
     </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -104,6 +96,7 @@
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/controllers/contact.js"></script>
     <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/book-search.js"></script>
     <script src="scripts/controllers/reservations.js"></script>
     <script src="scripts/controllers/reserve-room.js"></script>
     <script src="scripts/js/datetime-picker.js"></script>

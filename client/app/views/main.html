@@ -1,23 +1,155 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+
+<!-- Bootstrap Core CSS -->
+<link href="../styles/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../styles/modern-business.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">TODO
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Image Header -->
+  <div class="row">
+    <div class="col-lg-12">
+      <img class="img-responsive" src="../images/cover.jpg" alt="">
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Service Panels -->
+  <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Služby UKC:</h2>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                        </span>
+        </div>
+        <div class="panel-body">
+          <h4>Knižnica</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <!--<a href="main.html#service-one" class="btn btn-primary">Learn More</a>-->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                        </span>
+        </div>
+        <div class="panel-body">
+          <h4>Študovňa</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+         <!-- <a href="main.html#service-two" class="btn btn-primary">Learn More</a>-->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-child fa-stack-1x fa-inverse"></i>
+                        </span>
+        </div>
+        <div class="panel-body">
+          <h4>Yoga</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!--  <a href="main.html#service-three" class="btn btn-primary">Learn More</a>-->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+        </div>
+        <div class="panel-body">
+          <h4>Spoločenské priestory</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+         <!-- <a href="main.html#service-four" class="btn btn-primary">Learn More</a>-->
+         <!-- <a href="main.html#service-four" data-toggle="tab" class="btn btn-primary">Service Four</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Tabs -->
+  <div class="row">
+    <div class="col-lg-12">
+
+      <ul id="myTab" class="nav nav-tabs nav-justified">
+        <li class="active"><a href="main.html#service-one" data-toggle="tab"><i class="fa fa-book"></i> Knižnica</a>
+        </li>
+        <li class=""><a href="main.html#service-two" data-toggle="tab"><i class="fa fa-graduation-cap"></i> Študovňa</a>
+        </li>
+        <li class=""><a href="main.html#service-three" data-toggle="tab"><i class="fa fa-child"></i> Yoga</a>
+        </li>
+        <li class=""><a href="main.html#service-four" data-toggle="tab"><i class="fa fa-plus"></i> Spoločenská miestnosť</a>
+        </li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="service-one">
+          <h4>Knižnica</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+        </div>
+        <div class="tab-pane fade" id="service-two">
+          <h4>Študovňa</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+        </div>
+        <div class="tab-pane fade" id="service-three">
+          <h4>Yoga</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+        </div>
+        <div class="tab-pane fade" id="service-four">
+          <h4>Spoločenská miestnosť</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in. At quia quaerat asperiores.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
+<!-- /.container -->
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<!-- jQuery -->
+<script src="../scripts/js/jquery.js"></script>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<!-- Bootstrap Core JavaScript -->
+<script src="../scripts/js/bootstrap.min.js"></script>

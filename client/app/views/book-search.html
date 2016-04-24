@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="../scripts/js/datetime-picker.js"></script>
+<!--<script src="../scripts/js/script.js"></script>-->
+
+<h2>AngularJs form</h2>
+
+<p>This is an AngularJs based form. It uses a controller to handle form validation and submission.</p>
+
+<div data-ng-controller="BookSearchCtrl">
+  <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+  <form name="formSearchBook" novalidate role="form">
+    <div class="form-group">
+      <label >Autor</label>
+      <span class="label label-danger" data-ng-show="submitted && formSearchBook.name.$error.required">Required!</span>
+      <input type="text" name="author" data-ng-model="author" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label >Názov diela</label>
+      <span class="label label-danger" data-ng-show="submitted && formSearchBook.name.$error.required">Required!</span>
+      <input type="text" name="title" data-ng-model="title" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label >Žáner</label>
+      <span class="label label-danger" data-ng-show="submitted && formSearchBook.subjectList.$error.required">Required!</span>
+      <select name="genreList" data-ng-model="genre" data-ng-options="id as value for (id, value) in genreListOptions" class="form-control" required>
+        <option value=""></option>
+      </select>
+    </div>
+
+    <button data-ng-disabled="progress.active()" data-ng-click="submitSearch(formSearchBook)" class="btn btn-default">Hľadaj</button>
+  </form>
+
+  <div>
+    <div>
+      <div class="text-warning">Only the <b>Description</b> and <b>Price</b> columns are editable in the server side</div>
+      <div ng-hide="!isLoaded" ui-grid="gridOptions" class="grid" ui-grid-edit ui-grid-auto-resize></div>
+    </div>
+  </div>
+</div>

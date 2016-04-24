@@ -41,6 +41,11 @@ angular
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
+      .when('/book-search', {
+        templateUrl: 'views/book-search.html',
+        controller: 'BookSearchCtrl',
+        controllerAs: 'book-search'
+      })
       .when('/reservations', {
         templateUrl: 'views/reservations.html',
         controller: 'ReservationsCtrl',

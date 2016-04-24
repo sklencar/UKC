@@ -18,3 +18,6 @@ POST    /app/signup                         controllers.SignupController.signup
 POST    /app/reserve-room                  controllers.ReservationController.registerReservation(json :String)
 GET     /app/reserve-room                  controllers.ReservationController.getReservation(id : Integer)
 GET     /app/reservations                  controllers.ReservationController.getAllReservations()
+
+GET     /app/book-search/                  controllers.BookSearchController.searchBy(json: String)
+GET     /app/book-search/:json             controllers.BookSearchController.searchBy(json: String)

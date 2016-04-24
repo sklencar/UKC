@@ -42,13 +42,15 @@ angular.module('clientApp')
 
     $scope.gridOptions.columnDefs = [
       {name: 'id', enableCellEdit: false, width: '5%'},
-      {name: 'title', enableCellEdit: false, displayName: 'Názov', width: '40%',
-        cellTemplate:'<div>' +
-        '<a href="http://stackoverflow.com">Click me</a>' +
-        '</div>' },
+      {name: 'title', enableCellEdit: false, displayName: 'Názov', width: '40%'},
       {name: 'startDate', displayName: 'Začiatok', enableCellEdit: false, width: '20%'},
       {name: 'endDate', displayName: 'Koniec', enableCellEdit: false, width: '20%'},
       {name: 'room.name', displayName: 'Miestnosť', enableCellEdit: false ,width: '15%'}
+    /*  ,
+      {name: 'title', enableCellEdit: false, displayName: 'Názov', width: '40%',
+        cellTemplate:'<div>' +
+        '<a href="http://stackoverflow.com"></a>' +
+        '</div>' },*/
 
     ];
 
