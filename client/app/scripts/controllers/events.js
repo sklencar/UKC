@@ -15,12 +15,13 @@ angular.module('clientApp')
 
       var id = $routeParams['id'];
 
+      var data = JSON.stringify({
+        id: $routeParams['id'],
+      });
+
       $http({
         method: 'GET',
-        url: '/app/event/',
-        params: {
-          id: '8'
-        }
+        url: '/app/event/'+$routeParams['id']
       }).then(function successCallback(response) {
         console.log('successCallback: ' + response);
 

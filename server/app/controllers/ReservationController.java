@@ -68,8 +68,8 @@ public class ReservationController extends Controller {
     }
 
     public Result getReservation(Integer id) {
-        try {
             // TODO filter past events;
+        System.out.println("DEBUG get res");
             try (Connection c = db.getConnection()) {
                 String sql = "SELECT * FROM t_event" +
                         ((id != null && id > 0) ? " WHERE id = " + id + ";" : ";");
@@ -79,12 +79,33 @@ public class ReservationController extends Controller {
                     String json = EventExtended.getEventsExtendedJSON(results);
                     return ok(json);
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        return internalServerError("Error!");
+    }
+
+    public Result getReservation2() {
+        // TODO filter past events;
+        Integer id = 8;
+        System.out.println("DEBUG get res");
+        try (Connection c = db.getConnection()) {
+            String sql = "SELECT * FROM t_event" +
+                    ((id != null && id > 0) ? " WHERE id = " + id + ";" : ";");
+            try (PreparedStatement ps = c.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                List<EventExtended> results = getResults(rs);
+                String json = EventExtended.getEventsExtendedJSON(results);
+                return ok(json);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return internalServerError("Error!");
     }
+
 
     private List<EventExtended> getResults(ResultSet rs) throws SQLException {
         List<EventExtended> results = new ArrayList<EventExtended>();
