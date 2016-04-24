@@ -20,9 +20,13 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'ui.bootstrap.datetimepicker',
+    'ui.bootstrap.dateparser',
+    'ui.bootstrap.datepicker',
+    'ui.bootstrap.timepicker',
     'ngMaterial',
     'ui.grid',
-    'ui.grid.edit'
+    'ui.grid.edit',
+    'ui.grid.infiniteScroll'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -55,6 +59,11 @@ angular
         templateUrl: 'views/reserve-room.html',
         controller: 'ReserveRoomCtrl',
         controllerAs: 'reserve-room'
+      })
+      .when('/event/id=?:id', {
+        templateUrl: 'views/event.html',
+        controller: 'EventsCtrl',
+        controllerAs: 'events'
       })
       .when('/signup', {
         templateUrl: 'views/signup.html',

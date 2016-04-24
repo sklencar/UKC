@@ -21,3 +21,6 @@ GET     /app/reservations                  controllers.ReservationController.get
 
 GET     /app/book-search/                  controllers.BookSearchController.searchBy(json: String)
 GET     /app/book-search/:json             controllers.BookSearchController.searchBy(json: String)
+
+# GET     /app/event/:id                     controllers.ReservationController.getFullReservation(id: Integer)
+GET     /app/event                        controllers.ReservationController.getReservation(id: Integer)

@@ -545,6 +545,8 @@ angular.module('ui.bootstrap.datetimepicker', ['ui.bootstrap.dateparser', 'ui.bo
                 enableTime: '=?',
                 initialPicker: '=?',
                 reOpenDefault: '=?',
+                minDate: "=",
+                maxDate: "=",
                 whenClosed: '&'
             },
             link: function (scope, element, attrs, ctrls) {

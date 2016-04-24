@@ -58,7 +58,7 @@ angular.module('clientApp')
         $scope.gridOptions.onRegisterApi = function(gridApi) {
           $scope.gridApi = gridApi;
         };
-        $scope.gridOptions.gridApi.core.refresh()
+        //$scope.gridOptions.gridApi.core.refresh()
 
       }, function errorCallback(response) {
         console.log('errorCallback: ' + response);

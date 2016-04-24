@@ -76,8 +76,8 @@ public class ReservationController extends Controller {
                 try (PreparedStatement ps = c.prepareStatement(sql)) {
                     ResultSet rs = ps.executeQuery();
                     List<EventExtended> results = getResults(rs);
-                    System.out.println("DEBUG: number of events"+ results.size());
-                    return ok("TODO !");
+                    String json = EventExtended.getEventsExtendedJSON(results);
+                    return ok(json);
                 }
             }
         } catch (SQLException e) {

@@ -2,11 +2,16 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <script src="../scripts/js/datetime-picker.js"></script>
+<script src="../scripts/js/datetimepicker.js"></script>
 <!--<script src="../scripts/js/script.js"></script>-->
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+<!-- Plugin files -->
+<!-- script src="https://cdn.rawgit.com/zhaber/datetimepicker/master/datetimepicker.js"></script -->
+<link href="https://cdn.rawgit.com/zhaber/datetimepicker/master/datetimepicker.css" type="text/css" rel="stylesheet">
 
-<h2>AngularJs form</h2>
+<h2>Vytvor event</h2>
 
-<p>This is an AngularJs based form. It uses a controller to handle form validation and submission.</p>
+<p>Prosím, v prípajde záujmu o vytovrenie eventu vypĺnte a potvrdte formulár.</p>
 
 <div data-ng-controller="ReserveRoomCtrl">
   <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
@@ -41,12 +46,6 @@
         </p>
       </div>
     </div>
-    <!--<div class="form-group">
-      <md-content>
-        <h4>Standard date-picker</h4>
-        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-      </md-content>
-    </div>-->
 
     <div class="form-group">
       <label >Kam chceš ísť?</label>
@@ -65,6 +64,48 @@
     <button data-ng-disabled="progress.active()" data-ng-click="submitReservation(helpForm)" class="btn btn-default">Poslať žiadosť</button>
   </form>
 
-  <button data-ng-click="getReservations(-1)" class="btn btn-default">Get Events</button>
-
 </div>
+
+<!-- <div ng-controller="DateTimePickerDemoCtrl" class="container">
+
+   <br><form name="demo">
+   <pre>Selected time and date is: <em>{{date | date:'shortTime' }}, {{date | date:'fullDate' }}</em></pre>
+
+   <datetimepicker
+     min-date="minDate"
+     hour-step="hourStep"
+     minute-step="minuteStep" ng-model="date" show-meridian="showMeridian"
+     date-format="{{format}}" date-options="dateOptions"
+     date-disabled="disabled(date, mode)"
+     datepicker-append-to-body="false"
+     readonly-date="false"
+     hidden-time="false"
+     hidden-date="false"
+     name="datetimepicker"
+     show-spinners="true"
+     readonly-time="false"
+     date-opened="dateOpened"
+   >
+     &lt;!&ndash; Use date-ng-click="open($event, opened)" to override date ng-click &ndash;&gt;
+   </datetimepicker>
+ </form>
+   <hr>
+   <div class="form-group">
+     <button class="btn btn-default btn-sm" date-ng-click="dateTimeNow()" tooltip="Set date and time to now">Now</button>
+     <button class="btn btn-default btn-sm" date-ng-click="toggleMinDate()" tooltip="After today restriction">Min date</button>
+     <button class="btn btn-default btn-sm" date-ng-click="timeToggleMode()">12H / 24H</button>
+     <button class="btn btn-default btn-sm" date-ng-click="resetHours()">Reset hours</button>
+   </div>
+   <div class="row">
+     <div class="col-xs-2 col-sm-2">Hours&nbsp;step</div>
+     <div class="col-xs-3">
+       <select ng-model="hourStep" class="form-control" ng-options="opt for opt in timeOptions.hourStep"></select>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-xs-2 col-sm-2">Minutes&nbsp;step</div>
+     <div class="col-xs-3">
+       <select ng-model="minuteStep" class="form-control" ng-options="opt for opt in timeOptions.minuteStep"></select>
+     </div>
+   </div><br>
+ </div>-->
