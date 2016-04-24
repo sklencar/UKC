@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="../scripts/js/datetime-picker.js"></script>
+<!--<script src="../scripts/js/script.js"></script>-->
+
+<h2>AngularJs form</h2>
+
+<p>This is an AngularJs based form. It uses a controller to handle form validation and submission.</p>
+
+<div data-ng-controller="ReserveRoomCtrl">
+  <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+  <form name="helpForm" novalidate role="form">
+    <div class="form-group">
+      <label >Názov</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
+      <input type="text" name="title" data-ng-model="title" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Začiatok</label>
+      <div >
+        <p class="input-group">
+          <input type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="pickerStart.date" is-open="pickerStart.open" />
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="openCalendar($event, 'pickerStart')"><i class="fa fa-calendar"></i></button>
+              </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Koniec</label>
+      <div>
+        <p class="input-group">
+          <input type="text" class="form-control" datetime-picker="MM/dd/yyyy HH:mm" ng-model="pickerEnd.date" is-open="pickerEnd.open" />
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="openCalendar($event, 'pickerEnd')"><i class="fa fa-calendar"></i></button>
+              </span>
+        </p>
+      </div>
+    </div>
+    <!--<div class="form-group">
+      <md-content>
+        <h4>Standard date-picker</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+      </md-content>
+    </div>-->
+
+    <div class="form-group">
+      <label >Kam chceš ísť?</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.subjectList.$error.required">Required!</span>
+      <select name="subjectList" data-ng-model="room" data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control" required>
+        <option value=""></option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Opis</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
+      <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
+    </div>
+
+    <button data-ng-disabled="progress.active()" data-ng-click="submitReservation(helpForm)" class="btn btn-default">Poslať žiadosť</button>
+  </form>
+
+  <button data-ng-click="getReservations(-1)" class="btn btn-default">Get Events</button>
+
+</div>

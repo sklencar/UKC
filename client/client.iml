@@ -6,5 +6,41 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="client node_modules" level="project" />
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../server/public/lib/json-20160212.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../server/public/lib/lombok.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../server/public/lib/mysql-connector-java-5.1.34-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../server/public/lib/ebean-2.7.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

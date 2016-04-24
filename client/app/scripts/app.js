@@ -17,7 +17,12 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'ui.bootstrap.datetimepicker',
+    'ngMaterial',
+    'ui.grid',
+    'ui.grid.edit'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,6 +35,21 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
+      .when('/reservations', {
+        templateUrl: 'views/reservations.html',
+        controller: 'ReservationsCtrl',
+        controllerAs: 'reservations'
+      })
+      .when('/reserve-room', {
+        templateUrl: 'views/reserve-room.html',
+        controller: 'ReserveRoomCtrl',
+        controllerAs: 'reserve-room'
       })
       .when('/signup', {
         templateUrl: 'views/signup.html',
