@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('ReserveRoomCtrl', function ($scope, $http, $log, $timeout) {
+  .controller('ReserveRoomCtrl', function ($scope, $http) {
 
     ///////////////////
 
@@ -30,18 +30,9 @@ angular.module('clientApp')
     $scope.openCalendar = function(e, picker) {
       $scope[picker].open = true;
     };
+    
 
-
-    /* var payload = {
-       email : $scope.email,
-       password : $scope.password
-     };
-     $http.post('app/signup', payload)
-       .success(function(data) {
-         $log.debug(data);
-       });*/
-
-
+    // TODO extract to separate file
     $scope.subjectListOptions = {
       '1': 'Kuchynka',
       '2': 'Spoločenská miestnosť',

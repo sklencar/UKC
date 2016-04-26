@@ -14,15 +14,32 @@
   <!-- Intro Content -->
   <div class="row">
     <div class="col-md-6">
-      <img class="img-responsive" src="../images/about.jpg" alt="">
+      <img class="img-responsive" src={{pic}} alt="">
       <!--<img class="img-responsive" src="http://placehold.it/750x450" alt="">-->
     </div>
     <div class="col-md-6">
-      <h2>Univerzitné Kultúrne Centrum</h2>
+      <h4>Popis:</h4>
       {{description}}
+      <hr>
+      <div class="row">
+
+        <div class="col-md-6">
+          <h4>Začiatok</h4>
+       <span class="fa-stack fa-3x">
+         <i class="fa fa-calendar" aria-hidden="true"></i>
+         {{startDate}}
+       </span>
+          </div>
+        <div class="col-md-6">
+          <h4>Koniec</h4>
+       <span class="fa-stack fa-3x">
+         <i class="fa fa-calendar" aria-hidden="true"></i>
+         {{endDate}}
+       </span>
+        </div>
+      </div>
     </div>
   </div>
   <!-- /.row -->
-
 
 </div>

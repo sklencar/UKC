@@ -29,6 +29,7 @@ angular
     'ui.grid.infiniteScroll'
   ])
   .config(function ($routeProvider) {
+    // TODO migrate to ui router
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

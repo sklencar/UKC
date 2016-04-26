@@ -1,20 +1,13 @@
 'use strict';
 
 angular.module('clientApp')
-  .controller('EventsCtrl', ['$scope', '$http', '$location', '$route', '$routeParams',  function ($scope, $http, $location, $route, $routeParams) {
+  .controller('EventsCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
-
-    //$location.
-    console.log($route.current.params);
-    console.log($routeParams['id']);
 
     $scope.title = '';
     $scope.description;
 
     $scope.load = function () {
-
-      var id = $routeParams['id'];
-
       var data = JSON.stringify({
         id: $routeParams['id'],
       });
@@ -25,7 +18,15 @@ angular.module('clientApp')
       }).then(function successCallback(response) {
         console.log('successCallback: ' + response);
 
-        $scope.title = response.data.title;
+        $scope.pic = '../images/' + response.data[0].roomId + '.jpg';
+        $scope.title = response.data[0].title;
+        $scope.description = response.data[0].description;
+        $scope.startDate = response.data[0].startDate;
+        $scope.endDate = response.data[0].startDate;
+        //$scope.endDate = moment(response.data[0].endDateTime).format('MM/DD/YYYY');;
+        $scope.room = $scope.subjectListOptions[response.data[0].roomId];
+
+
       }, function errorCallback(response) {
         console.log('errorCallback: ' + response);
       }).finally(function () {
@@ -33,6 +34,12 @@ angular.module('clientApp')
       });
 
     }
+
+    $scope.subjectListOptions = {
+      '1': 'Kuchynka',
+      '2': 'Spoločenská miestnosť',
+      '3': 'Klubovňa'
+    };
 
     $scope.load();
   }]);

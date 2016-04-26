@@ -13,12 +13,33 @@ public class EventExtended extends Event{
     Room room;
     TUser owner;
 
+    Long startDateTime;
+    Long endDateTime;
+
+
+
     public static String getEventsExtendedJSON(List<EventExtended> events) {
 
         Gson gson = new Gson();
         String json = gson.toJson(events);
         System.out.println("DEBUG json: \n" + json);
         return json;
+    }
+
+    public Long getStartDateTime() {
+        return startDateTime;
+    }
+
+    public void setStartDateTime(Long startDateTime) {
+        this.startDateTime = startDateTime;
+    }
+
+    public Long getEndDateTime() {
+        return endDateTime;
+    }
+
+    public void setEndDateTime(Long endDateTime) {
+        this.endDateTime = endDateTime;
     }
 
     public String getRoomName() {
