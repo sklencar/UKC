@@ -13,6 +13,7 @@ public class SearchBook {
     private String title;
     private String surname;
     private Long id_t_user;
+    private Boolean rented;
 
 
     public static String getJSON(List<SearchBook> books) {
@@ -22,6 +23,13 @@ public class SearchBook {
         return json;
     }
 
+    public Boolean getRented() {
+        return rented;
+    }
+
+    public void setRented(Boolean rented) {
+        this.rented = rented;
+    }
 
     public Long getId() {
         return id;

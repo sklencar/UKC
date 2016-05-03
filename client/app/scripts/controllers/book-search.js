@@ -17,10 +17,10 @@ angular.module('clientApp')
     };
 
     $scope.gridOptions.columnDefs = [
-      {name: 'id', enableCellEdit: false, visible : false, width: '10%'},
-      {name: 'author', displayName: 'Autor', enableCellEdit: false, width: '20%'},
+      {name: 'surname', displayName: 'Autor', enableCellEdit: false, width: '20%'},
       {name: 'title', displayName: 'Názov', enableCellEdit: false,  width: '40%'},
       {name: 'genre', displayName: 'Žáner', enableCellEdit: false, width: '20%'},
+      {name: 'rented', displayName: 'Požičaná', enableCellEdit: false,  width: '10%'},
       /*  ,
        {name: 'title', enableCellEdit: false, displayName: 'Názov', width: '40%',
        cellTemplate:'<div>' +
@@ -35,6 +35,8 @@ angular.module('clientApp')
       '2': 'Spoločenská miestnosť',
       '3': 'Klubovňa'
     };
+
+
 
 
     $scope.search = function(form) {

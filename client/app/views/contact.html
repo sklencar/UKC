@@ -77,29 +77,37 @@
   <div class="row">
     <div class="col-md-8">
       <h3>Pošli nám správu!</h3>
-      <form name="sentMessage" id="contactForm" novalidate>
+      <form name="sentMessage" ng-submit="sendMail()" required
+            blur="submitToggle" novalidate>
         <div class="control-group form-group">
           <div class="controls">
             <label>Meno a priezvisko:</label>
-            <input type="text" class="form-control" id="name" required data-validation-required-message="Prosím, zadajte Vaše meno a priezvisko.">
+            <input type="text" ng-model="name" class="form-control" id="name" required data-validation-required-message="Prosím, zadajte Vaše meno a priezvisko.">
+            <p class="help-block"></p>
+          </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="controls">
+            <label>Predmet:</label>
+            <input type="text" ng-model="subject" class="form-control" id="subject" required data-validation-required-message="Predmet.">
             <p class="help-block"></p>
           </div>
         </div>
         <div class="control-group form-group">
           <div class="controls">
             <label>Emailová adresa</label>
-            <input type="email" class="form-control" id="email" required data-validation-required-message="Prosím, zadajte Váš mail.">
+            <input type="email" ng-model="email" class="form-control" id="email" required data-validation-required-message="Prosím, zadajte Váš mail.">
           </div>
         </div>
         <div class="control-group form-group">
           <div class="controls">
             <label>Správa:</label>
-            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Prosím, zadajte telo správy." maxlength="999" style="resize:none"></textarea>
+            <textarea rows="10" ng-model="body" cols="100" class="form-control" id="message" required data-validation-required-message="Prosím, zadajte telo správy." maxlength="999" style="resize:none"></textarea>
           </div>
         </div>
         <div id="success"></div>
         <!-- For success/fail messages -->
-        <button type="submit" class="btn btn-primary">Poslať</button>
+        <button type="submit">Poslať</button>
       </form>
     </div>
 

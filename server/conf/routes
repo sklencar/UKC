@@ -24,3 +24,6 @@ GET     /app/book-search/:json             controllers.BookSearchController.sear
 
 # GET     /app/event/:id                     controllers.ReservationController.getFullReservation(id: Integer)
 GET     /app/event/:id                     controllers.ReservationController.getReservation(id :Integer)
+
+POST     /app/contact/:json                controllers.ContactController.sendMail(json: String)
+POST     /app/contact/                     controllers.ContactController.sendMail(json: String)

@@ -30,7 +30,7 @@ angular.module('clientApp')
     $scope.openCalendar = function(e, picker) {
       $scope[picker].open = true;
     };
-    
+
 
     // TODO extract to separate file
     $scope.subjectListOptions = {
@@ -62,6 +62,12 @@ angular.module('clientApp')
         }
       }).then(function successCallback(response) {
         console.log('successCallback: ' + response);
+
+        $scope.title = '';
+        $scope.email = '';
+        $scope.room = '';
+        $scope.comments = '';
+        //$scope.pickerStart.date.getTime() = ''$scope.pickerEnd.date.getTime()
       }, function errorCallback(response) {
         console.log('errorCallback: ' + response);
       }).finally(function () {

@@ -39,19 +39,20 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">client</a>
+            <a class="navbar-brand" href="#/">UKC</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/contact">Contact</a></li>
+              <!--<li><a href="#/">Home</a></li>-->
+              <li><a ng-href="#/about" >O nás</a></li>
+              <li ng-class="{active: ($route.current.loadedTemplateUrl === 'views/contact.html')}"><a ng-href="#/contact">Kontakt</a></li>
               <li><a ng-href="#/book-search">Hľadaj knihu</a></li>
-              <li><a ng-href="#/reservations">Rezervácie</a></li>
+            <!--  <li ng-class="{active: $route.current.activetab === 'reservations'}"><a ng-href="#/reservations">Rezervácie</a></li>-->
+              <li ng-class="{active: $route.current.activetab === 'reservations'}"><a ng-href="#/reservations">Rezervácie</a></li>
               <li><a ng-href="#/reserve-room">Rezervuj si</a></li>
-              <li><a ng-href="#/signup">Signup</a></li>
+              <li><a ng-href="#/signup">Prihlás sa</a></li>
             </ul>
           </div>
         </div>

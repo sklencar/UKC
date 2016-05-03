@@ -20,7 +20,7 @@
     <div class="form-group">
       <label >Názov</label>
       <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
-      <input type="text" name="title" data-ng-model="title" class="form-control" required />
+      <input type="text" name="title" data-ng-model="title" class="form-control"  />
     </div>
 
     <div class="form-group">
@@ -50,7 +50,7 @@
     <div class="form-group">
       <label >Kam chceš ísť?</label>
       <span class="label label-danger" data-ng-show="submitted && helpForm.subjectList.$error.required">Required!</span>
-      <select name="subjectList" data-ng-model="room" data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control" required>
+      <select name="subjectList" data-ng-model="room" data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control">
         <option value=""></option>
       </select>
     </div>
@@ -58,7 +58,7 @@
     <div class="form-group">
       <label>Opis</label>
       <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
-      <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
+      <textarea name="comments" data-ng-model="comments" class="form-control" ></textarea>
     </div>
 
     <button data-ng-disabled="progress.active()" data-ng-click="submitReservation(helpForm)" class="btn btn-default">Poslať žiadosť</button>

@@ -29,21 +29,32 @@ public class BookSearchController extends Controller {
             + "(SELECT id_t_user FROM t_rental WHERE id_t_book = b.id AND end_date IS NULL ORDER BY start_date ASC LIMIT 1) AS id_t_user\n"
             + "FROM t_book b\n";
 
+    public final static String SELECT = "SELECT b.title,\n" +
+            "            b.id, \n" +
+            "\t\t\taut.surname AS author,\n" +
+            "(SELECT id_t_user FROM t_rental WHERE id_t_book = b.id AND end_date IS NULL ORDER BY start_date ASC LIMIT 1) AS id_t_user \n"+
+
+            "            FROM t_book b\n" +
+            "            LEFT JOIN t_authorship a\n" +
+            "            ON a.id_t_book = b.id\n" +
+            "            LEFT JOIN t_author aut\n" +
+            "            ON aut.id = a.id_t_author \n";
+
     public Result searchBy(String json) {
         System.out.println("DEBUG:" + json);
 
         try {
             JSONObject obj = new JSONObject(json);
 
-            String select = SQL_SELECT_BOOK_RECORDS;
+            String select = SELECT;
             if (!obj.getString("author").equals("")) {
-                select += "WHERE LOWER(surname) LIKE LOWER('"+ obj.getString("author") + "') \n";
+                select += "WHERE LOWER(aut.surname) LIKE LOWER('"+ obj.getString("author") + "') \n";
             }
             if (!obj.getString("title").equals("")) {
-                select += "WHERE LOWER(title) LIKE LOWER('"+ obj.getString("title") + "') \n";
+                select += "WHERE LOWER(b.title) LIKE LOWER('"+ obj.getString("title") + "') \n";
             }
 
-            select +=";";
+            select +="LIMIT 100;";
             PreparedStatement ps = db.getConnection().prepareStatement(select);
             System.out.println(select);
             ResultSet rs = ps.executeQuery();
@@ -78,6 +89,11 @@ public class BookSearchController extends Controller {
             bean.setId_t_user(rs.getLong("id_t_user"));
             if (rs.wasNull())
                 bean.setId_t_user(null);
+
+            bean.setRented(bean.getId_t_user() != null);
+            if (rs.wasNull())
+                bean.setRented(false);
+
 
             results.add(bean);
         }
@@ -135,9 +151,13 @@ public class BookSearchController extends Controller {
         }
 
         //extended
-        bean.setSurname(rs.getString("surname"));
+        bean.setSurname(rs.getString("author"));
         if (rs.wasNull())
             bean.setSurname(null);
+
+        bean.setRented(true);
+        if (rs.wasNull())
+            bean.setRented(false);
 
         return bean;
     }

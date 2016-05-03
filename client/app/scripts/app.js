@@ -34,22 +34,26 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        activetab: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        activetab: 'about'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
-        controllerAs: 'contact'
+        controllerAs: 'contact',
+        activetab: 'contact'
       })
       .when('/book-search', {
         templateUrl: 'views/book-search.html',
         controller: 'BookSearchCtrl',
-        controllerAs: 'book-search'
+        controllerAs: 'book-search',
+        activetab: 'book-search'
       })
       .when('/reservations', {
         templateUrl: 'views/reservations.html',
@@ -59,16 +63,20 @@ angular
       .when('/reserve-room', {
         templateUrl: 'views/reserve-room.html',
         controller: 'ReserveRoomCtrl',
-        controllerAs: 'reserve-room'
+        controllerAs: 'reserve-room',
+        activetab: 'reserve-room'
       })
       .when('/event/id=?:id', {
         templateUrl: 'views/event.html',
         controller: 'EventsCtrl',
-        controllerAs: 'events'
+        controllerAs: 'events',
+        activetab: 'reservations'
       })
       .when('/signup', {
         templateUrl: 'views/signup.html',
-        controller: 'SignupCtrl'
+        controller: 'SignupCtrl',
+        controllerAs: 'signup',
+        activetab: 'signup'
       })
       .otherwise({
         redirectTo: '/'

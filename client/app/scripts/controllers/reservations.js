@@ -8,7 +8,12 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('ReservationsCtrl', ['$scope', '$http', '$filter', 'uiGridConstants', function ($scope, $http, $filter, uiGridConstants) {
+  .controller('ReservationsCtrl', ['$scope', '$http', '$filter', '$route', '$location', 'uiGridConstants', function ($scope, $http, $filter, $route, $location, uiGridConstants) {
+    $scope.$route = $route;
+
+    $scope.isTabActive = function(route) {
+      return route === $location.path();
+    }
 
     $scope.selections = [];
     $scope.gridOptions = {
@@ -34,27 +39,10 @@ angular.module('clientApp')
     }
 
 
-    /*$scope.gridOptions.onRegisterApi = function(gridApi){
-      //set gridApi on scope
-      $scope.gridApi = gridApi;
-      gridApi.selection.on.rowSelectionChanged($scope,function(row){
-        var msg = 'row selected ' + row.isSelected;
-        $log.log(msg);
-      });
-
-      gridApi.selection.on.rowSelectionChangedBatch($scope,function(rows){
-        var msg = 'rows changed ' + rows.length;
-        $log.log(msg);
-      });
-      gridApi.selection.on.rowSelectionChanged(scope, singleSelect)
-      gridApi.selection.on.rowSelectionChangedBatch(scope, function (rows) {
-        rows.forEach(singleSelect)
-      })
-    };*/
 
     $scope.gridOptions.columnDefs = [
       {name: 'id', enableCellEdit: false,  enableFiltering: false, width: '10%',
-        displayName: 'Klik',
+        displayName: 'Link',
        /* cellTemplate:'<div>' +
         '<a href="http://stackoverflow.com"><span><i class="fa fa-arrow-circle-right"></i></span> link</a>' +
         '</div>' },*/
