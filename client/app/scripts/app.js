@@ -26,9 +26,10 @@ angular
     'ngMaterial',
     'ui.grid',
     'ui.grid.edit',
-    'ui.grid.infiniteScroll'
+    'ui.grid.infiniteScroll',
+    'satellizer'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $authProvider) {
     // TODO migrate to ui router
     $routeProvider
       .when('/', {
@@ -72,13 +73,32 @@ angular
         controllerAs: 'events',
         activetab: 'reservations'
       })
-      .when('/signup', {
+     /* .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignupCtrl',
         controllerAs: 'signup',
         activetab: 'signup'
+      })*/
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+        /*resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
+        }*/
+      })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupCtrl'
+        /*resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
+        }*/
+      })
+      .when('logout', {
+        url: '/logout',
+        template: null,
+        controller: 'LogoutCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/reserve-room'
       });
   });

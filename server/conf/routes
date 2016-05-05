@@ -27,3 +27,8 @@ GET     /app/event/:id                     controllers.ReservationController.get
 
 POST     /app/contact/:json                controllers.ContactController.sendMail(json: String)
 POST     /app/contact/                     controllers.ContactController.sendMail(json: String)
+
+
+POST     /app/auth/login                  controllers.ContactController.sendMail(json: String)
+
+
