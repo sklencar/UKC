@@ -101,4 +101,42 @@ angular
       .otherwise({
         redirectTo: '/reserve-room'
       });
-  });
+
+    $authProvider.httpInterceptor = function() { return true; },
+      $authProvider.withCredentials = true;
+    $authProvider.tokenRoot = null;
+    $authProvider.cordova = false;
+    $authProvider.baseUrl = '/';
+    $authProvider.loginUrl = '/api/auth/login';
+    $authProvider.signupUrl = '/api/auth/signup';
+    $authProvider.unlinkUrl = '/api/auth/unlink/';
+    $authProvider.tokenName = 'token';
+    $authProvider.tokenPrefix = 'satellizer';
+    $authProvider.authHeader = 'Authorization';
+    $authProvider.authToken = 'Bearer';
+    $authProvider.storageType = 'localStorage';
+
+    function skipIfLoggedIn($q, $auth) {
+      var deferred = $q.defer();
+      if ($auth.isAuthenticated()) {
+        deferred.reject();
+      } else {
+        deferred.resolve();
+      }
+      return deferred.promise;
+    }
+
+    function loginRequired($q, $location, $auth) {
+      var deferred = $q.defer();
+      if ($auth.isAuthenticated()) {
+        deferred.resolve();
+      } else {
+        $location.path('/login');
+      }
+      return deferred.promise;
+    }
+  })
+  .run(function($rootScope, $window, $auth) {
+    if ($auth.isAuthenticated()) {
+      $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+    }});

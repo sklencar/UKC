@@ -29,6 +29,7 @@ POST     /app/contact/:json                controllers.ContactController.sendMai
 POST     /app/contact/                     controllers.ContactController.sendMail(json: String)
 
 
-POST     /app/auth/login                  controllers.ContactController.sendMail(json: String)
+# POST     /app/auth/login                  controllers.ContactController.sendMail(json: String)
+POST     /app/auth/signup                 authentification.resources.AuthResource.signup(user: User, request: HttpServletRequest)
 
 
