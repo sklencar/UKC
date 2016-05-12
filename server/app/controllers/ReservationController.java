@@ -1,10 +1,10 @@
 package controllers;
 
-import models.EventExtended;
-import models.Room;
+import beans.EventExtended;
+import beans.Room;
 import org.json.JSONException;
 import org.json.JSONObject;
-import play.db.Database;
+import play.db.DefaultDatabase;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ReservationController extends Controller {
     @Inject
-    Database db;
+    DefaultDatabase db;
 
     public Result registerReservation(String json) {
         System.out.println("DEBUG:" + json);

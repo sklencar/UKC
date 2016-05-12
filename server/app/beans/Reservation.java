@@ -1,4 +1,4 @@
-package models;
+package beans;
 
 /**
  * Created by Vito on 21. 4. 2016.

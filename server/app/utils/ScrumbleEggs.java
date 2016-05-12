@@ -6,6 +6,6 @@ package utils;
 public class ScrumbleEggs {
     public static String KC_NAME = "vsklencar";
     public static String KC_MAIL = KC_NAME+"@gmail.com";
-    public static String KC_PASS= "futurama";
+    public static String KC_PASS= ""; // ADD pass
 
 }

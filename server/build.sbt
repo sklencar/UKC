@@ -25,4 +25,11 @@ libraryDependencies += "org.hibernate" % "hibernate-core" % "5.1.0.Final"
 libraryDependencies += "io.dropwizard" % "dropwizard-hibernate" % "0.7.0"
 libraryDependencies += "com.nimbusds" % "nimbus-jose-jwt" % "4.16.2"
 libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m"
+libraryDependencies += "com.typesafe.play" % "play-java-ebean_2.11" % "2.4.0-M2"
+libraryDependencies += evolutions
+
 libraryDependencies += jdbc
+
+/*
+
+  [warn] There may be incompatibilities among your library dependencies. [warn] Here are some of the libraries that were evicted: [warn] * org.hibernate:hibernate-core:4.3.1.Final -> 5.1.0.Final [warn] * io.dropwizard:dropwizard-core:0.7.0 -> 1.0.0-rc2 [warn] * com.typesafe.play:play-java-jdbc_2.11:2.4.0-M2 -> 2.5.2 [warn] Run 'evicted' to see detailed eviction warnings*/

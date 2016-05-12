@@ -26,10 +26,9 @@ angular
     'ngMaterial',
     'ui.grid',
     'ui.grid.edit',
-    'ui.grid.infiniteScroll',
-    'satellizer'
+    'ui.grid.infiniteScroll'
   ])
-  .config(function ($routeProvider, $authProvider) {
+  .config(function ($routeProvider) {
     // TODO migrate to ui router
     $routeProvider
       .when('/', {
@@ -79,13 +78,13 @@ angular
         controllerAs: 'signup',
         activetab: 'signup'
       })*/
-      .when('/login', {
+   /*   .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
-        /*resolve: {
+        /!*resolve: {
           skipIfLoggedIn: skipIfLoggedIn
-        }*/
-      })
+        }*!/
+      })*/
       .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignupCtrl'

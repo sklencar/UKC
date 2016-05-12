@@ -1,10 +1,10 @@
 package controllers;
 
-import models.BookRecord;
-import models.SearchBook;
+import beans.BookRecord;
+import beans.SearchBook;
 import org.json.JSONException;
 import org.json.JSONObject;
-import play.db.Database;
+import play.db.DefaultDatabase;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class BookSearchController extends Controller {
     @Inject
-    Database db;
+    DefaultDatabase db;
 
 
     public final static String SQL_SELECT_BOOK_RECORDS = "SELECT b.title,\n"

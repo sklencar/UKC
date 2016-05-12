@@ -12,7 +12,7 @@ GET     /message                            controllers.AsyncController.message
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
 
-POST    /app/signup                         controllers.SignupController.signup
+POST    /app/signup                         controllers.SignupController.signup()
 
 
 POST    /app/reserve-room                  controllers.ReservationController.registerReservation(json :String)
@@ -29,6 +29,8 @@ POST     /app/contact/:json                controllers.ContactController.sendMai
 POST     /app/contact/                     controllers.ContactController.sendMail(json: String)
 
 
-POST     /app/auth/login                  controllers.ContactController.sendMail(json: String)
+# POST     /app/auth/login                  controllers.ContactController.sendMail(json: String)
+
+
 
 
