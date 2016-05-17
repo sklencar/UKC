@@ -1,7 +1,7 @@
 package controllers;
 
-import models.EventExtended;
-import models.Room;
+import beans.EventExtended;
+import beans.Room;
 import org.json.JSONException;
 import org.json.JSONObject;
 import play.db.Database;

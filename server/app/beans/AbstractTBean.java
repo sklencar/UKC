@@ -1,4 +1,4 @@
-package models;
+package beans;
 
 import org.json.JSONException;
 import org.json.JSONObject;

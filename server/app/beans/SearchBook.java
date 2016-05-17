@@ -1,4 +1,4 @@
-package models;
+package beans;
 
 import com.google.gson.Gson;
 

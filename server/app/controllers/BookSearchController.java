@@ -1,7 +1,7 @@
 package controllers;
 
-import models.BookRecord;
-import models.SearchBook;
+import beans.BookRecord;
+import beans.SearchBook;
 import org.json.JSONException;
 import org.json.JSONObject;
 import play.db.Database;
