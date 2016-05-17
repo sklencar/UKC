@@ -26,10 +26,9 @@ angular
     'ngMaterial',
     'ui.grid',
     'ui.grid.edit',
-    'ui.grid.infiniteScroll',
-    'satellizer'
+    'ui.grid.infiniteScroll'
   ])
-  .config(function ($routeProvider, $authProvider) {
+  .config(function ($routeProvider) {
     // TODO migrate to ui router
     $routeProvider
       .when('/', {
