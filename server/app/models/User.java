@@ -1,5 +1,6 @@
 package models;
 
+import beans.BlogPost;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;

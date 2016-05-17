@@ -1,6 +1,7 @@
-package models;
+package beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import models.User;
 import play.db.ebean.Model;
 
 import javax.persistence.Column;

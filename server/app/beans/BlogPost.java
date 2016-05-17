@@ -1,15 +1,11 @@
-package models;
+package beans;
 
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
+import models.User;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
+
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Model representing Blog Post
